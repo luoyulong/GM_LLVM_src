@@ -10,7 +10,11 @@
 #include <set>
 #include <string>
 #include "gm_frontend_api.h"
-
+#include "llvm/DerivedTypes.h"
+#include "llvm/Support/IRBuilder.h"
+#include "llvm/LLVMContext.h"
+#include "llvm/Module.h"
+#include "llvm/Analysis/Verifier.h"
 enum {
     AST_ID,       // 
     AST_FIELD,    // A.B
@@ -131,6 +135,7 @@ class ast_node {
     public:
         void set_nodetype(int nt) {nodetype= nt;}
 
+        virtual llvm::Value *Codegen() = 0;
         virtual ~ast_node() {
             std::map<std::string, ast_extra_info*>::iterator i; 
             for(i=extra.begin();i!=extra.end();i++) {
