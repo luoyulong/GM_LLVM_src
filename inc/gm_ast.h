@@ -143,7 +143,7 @@ protected:
 public:
   void set_nodetype(int nt) {nodetype= nt;}
 
-  virtual Value *Codegen() = 0;
+  virtual Value *Codegen(){return NULL;}
   virtual ~ast_node() {
     std::map<std::string, ast_extra_info*>::iterator i;
     for(i=extra.begin();i!=extra.end();i++) {
