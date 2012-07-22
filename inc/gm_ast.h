@@ -851,7 +851,7 @@ public:
   virtual void traverse(gm_apply*a, bool is_post, bool is_pre);
   virtual bool is_expr() {return true;}
   virtual ast_expr* copy(bool cp_syminfo = false);
-  virtual Value *Codegen (ast_expr* E);
+  Value *Codegen (ast_expr* E){ return NULL;}
   // factory methods
 public:
   static ast_expr* new_id_expr(ast_id* id)  {

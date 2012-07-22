@@ -6,7 +6,9 @@ INC = ./inc
 OBJ = ../obj
 BIN = ../bin
 CFLAGS += -g -O1 -I$(INC) -I. -W
-LDFLAGS += -lrt 
+CFLAGS +=-I/Users/tuyoo/software/llvm/include  -D_DEBUG -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -O3  -fvisibility-inlines-hidden -fno-exceptions -fno-rtti -fno-common -Woverloaded-virtual -Wcast-qual
+CFLAGS +=-L/Users/tuyoo/software/llvm/lib
+#LDFLAGS += -lrt 
 
 # where to find sorce codes
 vpath %.h  inc
